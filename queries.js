@@ -6,5 +6,8 @@ module.exports = {
     }, 
     getById(id) {
         return database('locations').where({id: id}).first()
-    } 
+    }, 
+    createLocation(newLocation) {
+        return database('locations').insert(newLocation).returning('*')
+    }
 }
