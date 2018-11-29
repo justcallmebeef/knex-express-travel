@@ -14,6 +14,13 @@ app.get('/', (req, res) => {
     })
 })
 
+app.get('/:id', (req, res) => {
+    id = req.params.id
+    queries.getById(id).then(locations => {
+        res.send(locations)
+    })
+})
+
 app.use((req, res, next) => {
     res.status(404).json({ error: { message: 'data not found' }})
   })
