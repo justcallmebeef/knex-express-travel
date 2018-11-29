@@ -9,5 +9,8 @@ module.exports = {
     }, 
     createLocation(newLocation) {
         return database('locations').insert(newLocation).returning('*')
+    }, 
+    deleteLocation(id) {
+        return database('locations').where('id', id).delete()
     }
 }
