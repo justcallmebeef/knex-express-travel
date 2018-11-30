@@ -12,5 +12,8 @@ module.exports = {
     }, 
     deleteLocation(id) {
         return database('locations').where('id', id).delete()
+    }, 
+    updateLocation(id, location) {
+        return database('locations').where('id', id).update(location).returning('*')
     }
 }
