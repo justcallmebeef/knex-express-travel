@@ -4,7 +4,6 @@ exports.up = function(knex, Promise) {
         location.string('city')
         location.string('country')
         location.string('image')
-        location.integer('visits')
     })
 };
 

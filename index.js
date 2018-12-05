@@ -14,6 +14,12 @@ app.get('/', (req, res) => {
     })
 })
 
+app.get('/countries', (req, res) => {
+    queries.listCountries().then(countries => {
+        res.send(countries)
+    })
+})
+
 app.get('/:id', (req, res) => {
     id = req.params.id
     queries.getById(id).then(locations => {

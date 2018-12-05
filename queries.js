@@ -15,5 +15,8 @@ module.exports = {
     }, 
     updateLocation(id, location) {
         return database('locations').where('id', id).update(location).returning('*')
+    },
+    listCountries() {
+        return database('countries')
     }
 }
